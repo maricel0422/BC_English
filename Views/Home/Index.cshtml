@@ -46,8 +46,17 @@
 </div>
 
 <div class="container">
+    <br>
+    <p><i>
+        The English Department offers high quality courses in literature, 
+        composition, and creative writing.  The English Department seeks to foster 
+        creative and critical abilities, 
+        promote multiculturalism and tolerance, 
+        cultivate an appreciation of the English language, 
+        and empower students to achieve their academic and career goals.
+    </i></p>
     @if (Model.Courses == null)
-    { 
+    {
         //Display a message if no courses are returned by the Json request
         <h2>There are not English courses available at this moment</h2>
     }
@@ -57,10 +66,11 @@
         @foreach (var item in Model.Courses)
         {
             <h3>
-                @Html.DisplayFor(modelItem => item.Title) | <i> @Html.DisplayFor(modelItem => item.Credits) Credits
-</i>
+                @Html.DisplayFor(modelItem => item.Title) | <i>
+                    @Html.DisplayFor(modelItem => item.Credits) Credits
+                </i>
             </h3>
-                        <p>
+            <p>
                 @Html.DisplayFor(modelItem => item.Description)
             </p>
 
